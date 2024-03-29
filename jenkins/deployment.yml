@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myjenkins-replica
+  labels: 
+    app: tomcat
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  selector: 
+    matchLabels:
+      app: harsha
+  template:
+    metadata:
+      name: tomcat-2
+      labels:
+        app: harsha
+    spec:
+      containers:
+        - name: tomcat
+          image: harshahd18/newrepo_20_03:17
