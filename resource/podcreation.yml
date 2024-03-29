@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: Pod
-metadata:
-  name: mygrafana
-  namespace: harsha
-spec:
-  containers:
-    - name: grafana
-      image: grafana/grafana
