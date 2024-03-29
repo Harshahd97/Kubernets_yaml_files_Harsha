@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mygrafana
+  labels:
+    app: my-grafana
+spec:
+  containers:
+    - name: grafana
+      image: grafana/grafana
