@@ -27,3 +27,9 @@ spec:
           operator: "Equal"
           value: "red"
           effect: "NoSchedule"
+
+
+#kubectl taint node nodename colour=red:NoSchedule
+#kubectl describe node nodename >>> To view taint info
+#kubectl scale --replicas=4 deployment deploymentname
+#
