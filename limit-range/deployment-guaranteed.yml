@@ -33,3 +33,5 @@ spec:
 
 
 #When both the requested and minits are equal it is called Guaranteed..
+
+# If resource block is not mentioned, it is called Besreffort..
