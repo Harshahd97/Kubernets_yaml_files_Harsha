@@ -12,3 +12,7 @@ spec:
         cpu: 0.5
         memory: 250Mi
       type: Container	  	  
+
+
+#kubectl get limitrange -n dev
+#kubectl describe n dev
