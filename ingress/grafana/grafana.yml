@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-grafana-replica
+  labels:
+    app: grafana
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 1
+      maxUnavailable: 0
+  selector: 
+    matchLabels:
+      app: my-grafana
+  template:
+    metadata:
+      name: grafana-2
+      labels:
+        app: my-grafana
+    spec:
+      containers: 
+        - name: grafana-container
+          image: grafana/loki:1.4.1
+          env:
+            - name: GRAFANA_OPTS
+              value: --prefix=/grafana
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: grafana
+spec:
+  type: ClusterIP
+  selector:
+    app: my-grafana
+  ports:
+    - name: port
+      protocol: TCP
+      port: 3100
+      targetPort: 3100
