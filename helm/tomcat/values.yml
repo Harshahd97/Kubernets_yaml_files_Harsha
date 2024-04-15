@@ -1,0 +1,9 @@
+namespace: "tomcat"
+storageClass: "tomcat-storage"
+claimName: "tomcat-claim"
+requestStorage: "3Gi"
+deploymentName: "my-tomcat"
+appLabel: "tomcat"
+replicas: 2
+tag: 9.0
+volumeName: "tomcat-volume"
