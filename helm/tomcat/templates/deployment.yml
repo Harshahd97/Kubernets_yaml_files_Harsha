@@ -26,7 +26,7 @@ spec:
               value: --prefix=/tomcat          
           volumeMounts: 
             - name: {{ .Values.volumeName }}
-              mountPath: /usr/local/tomcat            
+              mountPath: /usr/local/tomcat/webapps            
       volumes:
         - name: {{ .Values.volumeName }}
           persistentVolumeClaim:
