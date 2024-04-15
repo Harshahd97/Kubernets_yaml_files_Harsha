@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myreplica
+  name: tomcat
   labels:
     app: tomcat
 spec:
-  replicas: 2
+  replicas: 1
   strategy:
     type: RollingUpdate
     rollingUpdate: 
-      maxSurge: 2
+      maxSurge: 1
       maxUnavailable: 0
   selector: 
     matchLabels:
@@ -22,7 +22,7 @@ spec:
     spec:
       containers: 
         - name: tomcat-container
-          image: tomcat:8.0
+          image: tomcat:9.0
           env:
             - name: TOMCAT_OPTS
               value: --prefix=/tomcat
