@@ -1,0 +1,8 @@
+namespace: "jenkins"
+storageClass: "jenkins-storage"
+claimName: "jenkins-claim"
+requestStorage: "5Gi"
+deploymentName: "my-jenkins"
+appLabel: "jenkins"
+replicas: 2
+volumeName: "jenkins-volume"
